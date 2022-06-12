@@ -1,0 +1,70 @@
+<div class="content">
+
+    <app-sidebar></app-sidebar>
+
+    <section>
+        <h2 class="pt-4 px-4">Department List</h2>
+    </section>
+    
+    <!-- Breadcrums Start -->
+    <div class="Bread pt-1 px-1">
+        <div style="margin:20px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a routerLink="/Home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Department List</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Breadcrums End -->
+
+    <div class="container-fluid px-4 pt-2 pb-2">
+        <div *ngIf="role=='Head'">
+            <div class="" *ngFor="let item of data">
+                <div class="row g-3 my-2">
+                    <div class="col-md-12">
+                        <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div class="col-10">
+                                <a href="">
+                                    <p class="mb-0 text-dark">{{item.name}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="role=='Co-Ordinator'">
+            <div class="header" id="style">
+                <a routerLink="/AddDepartment"> <button type="button"
+                        class="btn btn-dark pe-4 px-4">Add</button></a>
+                <input class="form-control" id="search" type="text" placeholder="Search" aria-label="Search">
+            </div>
+            <div *ngFor="let item of data">
+                <div class="row g-3 my-2">
+                    <div class="col-md-12">
+                        <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div class="col-2">
+                                <a href="">
+                                    <p class="mb-0 text-dark">{{item.name}}</p>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a class="mx-2"><i class="fa-solid fa-pen-to-square text-dark"></i></a>
+                            </div>
+                            <div class="col-2">
+                                <a class="mx-2"><i class="fa-solid fa-ban text-dark"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

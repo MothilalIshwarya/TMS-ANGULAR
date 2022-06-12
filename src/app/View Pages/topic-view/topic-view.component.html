@@ -1,0 +1,28 @@
+<div class="content">
+    <app-sidebar></app-sidebar>
+        <section>
+        <h3 class="pt-4 px-4">{{data.name}}</h3>
+    </section>
+    <div style="margin: 30px">
+       
+        <!--topic Description-->
+       
+            <div class="col-md-12">
+                <p class="text-left">{{data.content}}</p>
+            </div>
+       <br>
+         <!--topic duration -->
+         <div class="row mb-4">
+            <div class="col-md-1">
+                <h6>Duration</h6>
+            </div>
+            <div class="col-md-4">
+                <p>{{data.duration}}</p>
+            </div>
+        </div>
+        
+       
+        
+    </div>
+    <app-footer></app-footer>
+</div>

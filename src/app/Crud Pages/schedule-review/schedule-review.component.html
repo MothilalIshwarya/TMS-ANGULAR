@@ -1,0 +1,58 @@
+<div class="content">
+    <app-sidebar></app-sidebar>
+    <div class="pt-4 px-4">
+        <h2 class="mb-5">Schedule Review</h2>
+    </div>
+
+    <!-- <form action="" #ngForm (ngSubmit)=" OnSubmit()"> -->
+    <div class="container-fluid px-4 pt-2 pb-2">
+        <form action="" #ngForm (ngSubmit)="OnSubmit()">
+            <select class="form-select form-select-lg mb-5" area-label="default select example">
+                <option value="Department" disable selected>
+                    Department
+                </option>
+                <option *ngFor="let dept of Department" value="{{dept.id}}">
+                    {{dept.name}}
+                </option>
+            </select>
+
+            <select class="form-select form-select-lg mb-5" area-label="default select example" name="duration"
+                [(ngModel)]="Review.reviewerId">
+                <option value="Reviewer" disable selected>
+                    Reviewer
+                </option>
+                <option *ngFor="let reviewer of User" value="{{reviewer.id}}">
+                    {{reviewer.name}}
+                </option>
+            </select>
+
+            <select class="form-select form-select-lg mb-5" area-label="default select example" name="duration1"
+                [(ngModel)]="Review.traineeId">
+                <option value="Department" disable selected>
+                    Trainee
+                </option>
+                <option *ngFor="let User of Users" value="{{User.id}}">
+                    {{User.name}}
+                </option>
+            </select>
+
+            <div class="input-group-lg rounded my-4 mb-5 fs-1">
+                <input type="date" class="form-control rounded" placeholder="Date" aria-label="date"
+                    aria-describedby="search-addon" name="duration2" [(ngModel)]="Review.reviewDate" />
+            </div>
+
+            <div class="input-group-lg rounded my-2 mb-5">
+                <input type="time" class="form-control rounded" placeholder="Time" aria-label="Search"
+                    aria-describedby="search-addon" name="duration3" [(ngModel)]="Review.reviewTime" />
+            </div>
+
+            <select class="form-select form-select-lg mb-5" name="status" [(ngModel)]="Review.mode">
+                <option value="null" disable selected>Select Supplier</option>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+            </select>
+
+            <button type="submit" class="btn btn-dark pe-4 px-4 mb-5">Schedule</button>
+        </form>
+    </div>
+</div>

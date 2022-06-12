@@ -1,0 +1,53 @@
+<div class="content">
+
+    <app-sidebar></app-sidebar>
+
+     <!---- Breadcrums Start -->
+     <div class="Bread pt-1 px-1">
+        <div style="margin:20px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a routerLink="/Home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Assigned Reviews</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!---- Breadcrums End -->
+
+    <section>
+        <h2 class="pt-4 px-4">Assigned Review</h2>
+    </section>
+
+    <div class="container-fluid px-4 pt-2 pb-2">
+        <div *ngFor="let item of data">
+            <div class="row g-3 my-2">
+                <div class="col-md-12">
+                    <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <a href="">
+                                <p class="mb-0 text-dark">Trainee : {{item.trainee.name}}</p>
+                            </a>
+                        </div>
+                        <a href="">
+                            <p class="mb-0 text-dark">Reviewer : {{item.reviewer.name}}</p>
+                        </a>
+                        <div class="center">
+                            <a href=""><i class="fa-solid fa-pen-to-square text-dark"></i></a>
+                        </div>
+                        <div class="right">
+                            <a href=""><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <app-pagination></app-pagination>
+
+    <app-footer></app-footer>
+</div>

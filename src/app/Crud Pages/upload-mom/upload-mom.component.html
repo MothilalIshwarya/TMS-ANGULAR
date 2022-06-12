@@ -1,0 +1,123 @@
+<!-- Content Start -->
+<div class="content">
+    <app-sidebar></app-sidebar>
+
+    <section>
+        <h3 class="pt-4 px-4">Minutes of Meeting</h3>
+    </section>
+
+    <!-- <form action="" #ngForm (ngSubmit)="OnSubmit()"> -->
+    <form action="" #ngForm (ngSubmit)="OnSubmit()">
+        <div class="pt-5 px-4">
+            <!-- Reviewer name & sheduled by-->
+            <div class="row">
+                <div class="col-md-1">
+                    <h6>Reviewer Name</h6>
+                </div>
+                <div class="col-md-1 ">
+                    <h6> </h6>
+                </div>
+                <div class="col-md-1">
+                    <p>{{reviewername}}</p>
+                </div>
+            </div>
+            
+            <!--Scheduled by-->
+            <div class="row">
+                <div class="col-md-1 ">
+                    <h6> Scheduled By </h6>
+                </div>
+                <div class="col-md-1 ">
+                    <h6> </h6>
+                </div>
+                <div class="col-md-1">
+                    <p>James</p>
+                </div>
+            </div>
+
+            <!-- Review date-->
+            <div class="row">
+                <div class="col-md-1 ">
+                    <h6>Review Date </h6>
+                </div>
+                <div class="col-md-1 ">
+                    <h6> </h6>
+                </div>
+                <div class="col-md-1">
+                    <p>{{reviewdate}}</p>
+                </div>
+
+                <!-- Review time-->
+                <div class="row">
+                    <div class="col-md-1 ">
+                        <h6> Review Time </h6>
+                    </div>
+                    <div class="col-md-1 ">
+                        <h6> </h6>
+                    </div>
+                    <div class="col-md-1">
+                        <p>&nbsp;{{reviewtime}}</p>
+                    </div>
+                </div>
+
+                <!-- Review Mode-->
+                <div class="row">
+                    <div class="col-md-1">
+                        <h6> Review Mode </h6>
+                    </div>
+                    <div class="col-md-1 ">
+                        <h6> </h6>
+                    </div>
+                    <div class="col-md-1">
+                        <p>&nbsp;{{reviewmode}}</p>
+                    </div>
+                </div>
+
+                <!-- Purpose of meeting-->
+                <div class="row">
+                    <div class="col-md-1 ">
+                        <h6> Purpose of Meeting</h6>
+                    </div>
+                    <div class="col-md-1 ">
+                        <h6> </h6>
+                    </div>
+
+                    <div class="col-md-8 p-2">
+                        <input type="text" [(ngModel)]="mom.purposeOfMeeting" class="form-control"
+                            name="purposeOfMeeting">
+                        <!-- <textarea class="form-control" id="textAreaExample4" rows="3"></textarea>                         -->
+                    </div>
+                </div>
+
+                <!-- Agenda-->
+                <div class="row">
+                    <div class="col-md-1 ">
+                        <h6>Agenda </h6>
+                    </div>
+                    <div class="col-md-1 ">
+                        <h6> </h6>
+                    </div>
+                    <div class="col-md-8 p-2">
+                        <input type="text" [(ngModel)]="mom.agenda" class="form-control" name="agenda">
+                    </div>
+                </div>
+
+                <!-- Meeting Notes-->
+                <div class="row">
+                    <div class="col-md-1 ">
+                        <h6> Meeting Notes </h6>
+                    </div>
+                    <div class="col-md-1 ">
+                        <h6> </h6>
+                    </div>
+                    <div class="col-md-8 p-2">
+                        <input type="text" [(ngModel)]="mom.meetingNotes" class="form-control" name="meetingNotes">
+                    </div>
+                </div>
+                <a> <button type="submit" class="btn btn-dark pe-4 px-4">Submit</button></a>
+            </div>
+        </div>
+    </form>
+
+    <app-footer></app-footer>
+</div>

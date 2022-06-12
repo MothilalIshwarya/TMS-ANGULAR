@@ -1,0 +1,45 @@
+<div class="content">
+    <app-sidebar></app-sidebar>
+        <section>
+        <h3 class="pt-4 px-4">{{data.name}}</h3>
+    </section>
+    <div style="margin: 30px">
+       
+        <!--course Description-->
+       
+            <div class="col-md-12">
+                <p class="text-left">{{data.description}}</p>
+            </div>
+       <br>
+         <!--course duration -->
+         <div class="row mb-4">
+            <div class="col-md-1">
+                <h6>Duration</h6>
+            </div>
+            <div class="col-md-4">
+                <p>{{data.duration}}</p>
+            </div>
+        </div>
+        <!--course content -->
+        <div class="row mb-4">
+            <div class="col-md-2">
+                <h6>Course content </h6>
+            </div>
+        </div>
+        <div class="container-fluid" *ngFor="let item of topicdata">
+            <div class="row g-3 my-2">
+                <div class="col-md-12 col-xl-12">
+                    <div class="p-4 bg-light shadow-sm justify-content-around align-items-center rounded">
+                        <div class="col-8">
+                            <a (click)="pass(item.topicId)">
+                                <p class="mb-0 text-dark">{{item.name}}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <app-footer></app-footer>
+</div>

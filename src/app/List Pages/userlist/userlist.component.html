@@ -1,0 +1,187 @@
+<div class=" content">
+    <app-sidebar></app-sidebar>
+
+    <!-- Breadcrums Start -->
+    <div class="Bread pt-1 px-1">
+        <div class="py-4 ps-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a routerLink="/Home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Trainee List </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Breadcrums End -->
+
+    <div *ngIf="role=='Head'">
+
+        <div *ngIf="value == 2">
+            <section>
+                <h2 class=" px-4">Co-Ordinator List</h2>
+            </section>
+            <div class="container-fluid px-4 pt-2 pb-2">
+                <div class="header " id="style">
+                    <a routerLink="/AddUser"><button type="button" class="btn btn-dark pe-4 px-4">Add</button></a>
+
+                    <input class="form-control" id="search" type="text" placeholder="Search" aria-label="Search">
+                    <div class="container-fluid">
+                        <div class="col-sm-12 col-xl-12 ">
+                            <div class=" rounded">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Sort by Department</option>
+                                    <option value="1">.Net</option>
+                                    <option value="2">Java</option>
+                                    <option value="3">BFS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid px-4" *ngFor="let item of data">
+                <div class="row g-3 my-2">
+                    <div class="col-md-12">
+                        <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div class="col-2">
+                                <a routerLink="/UserProfile">
+                                    <p class="mb-0 text-dark">{{item.userName}}</p>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a routerLink="/" class="mx-2">
+                                    <i class="fa-solid fa-pen-to-square text-dark"></i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a class="mx-2">
+                                    <i class="fa-solid fa-ban text-dark"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="option=='Trainee' || 'Trainer' || 'Reviewer' ">
+            <div *ngIf="value == 2">
+                <section>
+                    <h2 class=" px-4">Co-Ordinator List</h2>
+                </section>
+            </div>
+            <div *ngIf="value == 3">
+                <section>
+                    <h2 class=" px-4">Trainer List</h2>
+                </section>
+            </div>
+            <div *ngIf="value == 4">
+                <section>
+                    <h2 class=" px-4">Trainee List</h2>
+                </section>
+            </div>
+            <div *ngIf="value == 5">
+                <section>
+                    <h2 class=" px-4">Reviewer List</h2>
+                </section>
+            </div>
+            <div class="container-fluid px-4 pt-2 pb-2">
+                <div class="header ps-3" id="style">
+                    <!-- Search form -->
+                    <input class="form-control" id="search" type="text" placeholder="Search" aria-label="Search">
+                    <div class="container-fluid">
+                        <div class="col-sm-12 col-xl-12 ">
+                            <div class=" rounded">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Sort by Department</option>
+                                    <option value="1">.Net</option>
+                                    <option value="2">Java</option>
+                                    <option value="3">BFS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid  px-4 " *ngFor="let item of data">
+                <div class="row g-3 my-2">
+                    <div class="col-md-12">
+                        <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div class="col-10">
+                                <a routerLink="/UserProfile">
+                                    <p class="mb-0 text-dark">{{item.userName}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="role == 'Co-Ordinator'">
+        <div *ngIf="value == 4">
+            <section>
+                <h2 class=" px-4">Trainee List</h2>
+            </section>
+        </div>
+        <div *ngIf="value == 3">
+            <section>
+                <h2 class=" px-4">Trainer List</h2>
+            </section>
+        </div>
+        <div *ngIf="value == 5">
+            <section>
+                <h2 class=" px-4">Reviewer List</h2>
+            </section>
+        </div>
+
+        <div class="container-fluid px-4 pt-2 pb-2">
+            <div class="header ps-3" id="style">
+                <a routerLink="/AddUser"> <button type="button" class="btn btn-dark pe-4 px-4">Add</button></a>
+                <!-- Search form -->
+                <input class="form-control" id="search" type="text" placeholder="Search" aria-label="Search">
+                <div class="container-fluid">
+                    <div class="col-sm-12 col-xl-12 ">
+                        <div class=" rounded">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Sort by Department</option>
+                                <option value="1">.Net</option>
+                                <option value="2">Java</option>
+                                <option value="3">BFS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" *ngFor="let item of data">
+                <div class="row g-3 my-2">
+                    <div class="col-md-12">
+                        <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div class="col-2">
+                                <a (click)="pass(item.id)">
+                                    <p class="mb-0 text-dark" >{{item.userName}}</p>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a routerLink="/" class="mx-2">
+                                    <i class="fa-solid fa-pen-to-square text-dark"></i>
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a class="mx-2">
+                                    <i class="fa-solid fa-ban text-dark"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
